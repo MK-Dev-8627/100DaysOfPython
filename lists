@@ -1,0 +1,157 @@
+fruits = ['apple', 'banana', 'orange','cherry', 'kiwi']
+numbers = [i for i in range(10)]
+
+print(fruits)
+print(len(fruits))
+print(type(fruits))
+
+print(fruits[3])
+
+# ===> Negative Indexing
+
+print(fruits[-3])
+print(fruits[len(fruits)-3])
+
+# ==> Range of Indexes
+
+print(fruits[1:3])
+print(numbers[1:9:2])
+print(numbers[:5])
+print(numbers[4:])
+
+# ===> Range of Negative Indexes
+
+print(numbers[-3:-1])
+print(numbers[-7:-2])
+
+# ==> Check if Item Exists
+if 'banana' in fruits:
+    print('Banana are present in fruits list')
+else:
+    print('Banana are not present')
+
+# ==> Change Item Value
+fruits[1]= 'mango'
+print(fruits)
+
+# ===> Change a Range of Item Values
+fruits[1:3] = ['banana','pinapple']
+print(fruits)
+
+# ==> Insert Items
+fruits.insert(3, 'watermelon') 
+print(fruits)
+
+fruits.append('straberry')
+print(fruits)
+
+# ==> Extend List
+list2 = ['orange','papaya']
+
+fruits.extend(list2)
+print(fruits)
+
+# ===> Add Any Iterable
+thislist = ["apple", "banana", "cherry"]
+thistuple = ("kiwi", "orange")
+thislist.extend(thistuple)
+print(thislist)
+
+# ===> Remove Specified Item
+fruits.remove('kiwi')
+print(fruits)
+
+# ===> Remove Specified Index
+
+fruits.pop(4)
+print(fruits)
+
+fruits.pop()
+print(fruits)
+
+del fruits[-3]
+print(fruits)
+
+thislist = ["apple", "banana", "cherry"]
+del thislist
+
+list2.clear()
+print(list2)
+
+# ==> Loop through list
+
+for x in fruits:
+  print(x)
+
+for x in range(len(fruits)):
+   print(fruits[x])
+
+   i = 0
+while i < len(fruits):
+  print(fruits[i])
+  i = i + 1
+
+# ===> List Comprehension
+
+newFruits =[]
+
+for x in fruits:
+   if 'e' in x:
+      newFruits.append(x)
+print(fruits)
+print(newFruits)
+
+newlist = [x for x in fruits if "a" in x]
+
+print(newlist)
+
+# ===> Sort List Alphanumerically
+
+fruits.sort()
+print(fruits)
+
+list3 = [100, 50, 65, 82, 23]
+list3.sort()
+print(list3)
+
+# ===> Sort Descending
+
+fruits.sort(reverse=True)
+print(fruits)
+list3.sort(reverse=True)
+print(list3)
+
+# ===> Customize Sort Function
+def myfunc(n):
+  return abs(n - 50)
+
+thislist = [100, 50, 65, 82, 23]
+thislist.sort(key = myfunc)
+print(thislist)
+
+fruits.sort(key = str.lower)
+print(fruits)
+
+# ===> Copy a List
+list4 = fruits.copy()
+list5 = list(list4)
+list6 = list5[:]
+print(list4)
+print(list5)
+print(list6)
+
+# ===> Join Two Lists
+
+list1 = ["a", "b", "c"]
+list2 = [1, 2, 3]
+
+list3 = list1 + list2
+print(list3)
+
+for x in list2:
+  list1.append(x)
+
+print(list1)
+
+list1.extend(list2)
+print(list1)
